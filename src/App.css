@@ -1,0 +1,123 @@
+/* App-specific styles */
+
+/* Hide scrollbar for horizontal scroll containers */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Line clamp utility */
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Smooth transitions for all interactive elements */
+button, a {
+  transition: all 0.3s ease;
+}
+
+/* Ensure pinned sections stack correctly */
+.pin-section {
+  will-change: transform;
+}
+
+/* Flowing sections */
+.flowing-section {
+  will-change: opacity, transform;
+}
+
+/* Card hover effects */
+.card-glass {
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+/* Responsive typography adjustments */
+@media (max-width: 768px) {
+  .headline-xl {
+    font-size: clamp(32px, 10vw, 40px);
+  }
+  
+  .headline-lg {
+    font-size: clamp(26px, 8vw, 32px);
+  }
+  
+  .headline-md {
+    font-size: clamp(20px, 6vw, 24px);
+  }
+}
+
+/* Ensure text remains visible during font load */
+@font-face {
+  font-family: 'Space Grotesk';
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-display: swap;
+}
+
+/* Dialog overlay styling */
+[data-radix-dialog-overlay] {
+  background-color: rgba(13, 17, 23, 0.9) !important;
+  backdrop-filter: blur(4px);
+}
+
+/* Focus states */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+  outline: 2px solid #10B981;
+  outline-offset: 2px;
+}
+
+/* Animation for gradient backgrounds */
+@keyframes gradient-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient-shift 8s ease infinite;
+}
+
+/* Custom checkbox styling */
+[data-state="checked"] {
+  background-color: #10B981 !important;
+  border-color: #10B981 !important;
+}
+
+/* Scrollbar styling for dialogs */
+.overflow-y-auto::-webkit-scrollbar {
+  width: 4px;
+}
+
+.overflow-y-auto::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.overflow-y-auto::-webkit-scrollbar-thumb {
+  background: #30363D;
+  border-radius: 2px;
+}
+
+.overflow-y-auto::-webkit-scrollbar-thumb:hover {
+  background: #10B981;
+}
